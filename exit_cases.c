@@ -26,7 +26,7 @@ void exit_openfail(char *filename)
  */
 void exit_instrucionfail(unsigned int ln, char *opcode, stack_t **stack)
 {
-	fclose(Gfile);
+	fclose(global.file);
 	free_stack(*stack);
 	fprintf(stderr, "L%u: unknown instruction %s\n", ln, opcode);
 	exit(EXIT_FAILURE);
@@ -38,7 +38,7 @@ void exit_instrucionfail(unsigned int ln, char *opcode, stack_t **stack)
  */
 void exit_mallocfail(stack_t **stack)
 {
-	fclose(Gfile);
+	fclose(global.file);
 	free_stack(*stack);
 	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);

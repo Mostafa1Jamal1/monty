@@ -9,6 +9,14 @@
 #include <fcntl.h>
 #include <ctype.h>
 
+/**
+ * struct globalvariable - struct of global variables
+ * @file: file stream
+ */
+typedef struct globalvariable
+{
+	FILE *file;
+} global_t;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -57,6 +65,6 @@ void exit_instrucionfail(unsigned int ln, char *opcode, stack_t **stack);
 void exit_mallocfail(stack_t **stack);
 /*************************************/
 
-extern FILE *Gfile;
+extern global_t global;
 
 #endif /* #ifndef MONTY_H */

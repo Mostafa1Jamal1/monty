@@ -6,7 +6,7 @@
  * Return: EXIT_SUCCESS or EXIT_FAILURE
  */
 
-FILE *Gfile;
+global_t global;
 
 int main(int argc, char **argv)
 {
@@ -16,14 +16,14 @@ int main(int argc, char **argv)
 	if (argc != 2)
 		exit_usagefail();
 	/* Handle open file */
-	Gfile = fopen(argv[1], "r");
-	if (!Gfile)
+	global.file = fopen(argv[1], "r");
+	if (!global.file)
 		exit_openfail(argv[1]);
 	/* Handle interpreting lines */
-	while (interpret_line(Gfile, &stack, line_number))
+	while (interpret_line(global.file, &stack, line_number))
 		line_number++;
 	/* Finished file */
-	fclose(Gfile);
+	fclose(global.file);
 	free_stack(stack);
 	return (EXIT_SUCCESS);
 }
