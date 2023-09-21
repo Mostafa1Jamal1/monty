@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * nop - 
+ * nop - doesn’t do anything.
  * @stack: a pointer to stack
  * @line_number: the line number
  */
