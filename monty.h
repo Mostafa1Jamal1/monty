@@ -12,10 +12,12 @@
 /**
  * struct globalvariable - struct of global variables
  * @file: file stream
+ * @line: the line in file
  */
 typedef struct globalvariable
 {
 	FILE *file;
+	char *line;
 } global_t;
 
 /**

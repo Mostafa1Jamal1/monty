@@ -20,6 +20,7 @@ int interpret_line(FILE *file, stack_t **stack, unsigned int line_number)
 		free(line);
 		return (0);
 	}
+	global.line = line;
 	opcode = strtok(line, " \n");
 	/* Empty line check */
 	if (!opcode)
