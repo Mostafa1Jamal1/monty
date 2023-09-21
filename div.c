@@ -5,7 +5,7 @@
  * @stack: a pointer to stack
  * @line_number: the line number
  */
-void div(stack_t **stack, unsigned int line_number)
+void monty_div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top = *stack, *next;
 
