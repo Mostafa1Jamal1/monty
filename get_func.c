@@ -20,6 +20,7 @@ void (*get_func(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"div", monty_div},
 		{"mul", monty_mul},
 		{"mod", monty_mod},
+		{"pchar", monty_pchar},
 		{NULL, NULL}
 	};
 
