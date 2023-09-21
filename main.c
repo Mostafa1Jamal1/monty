@@ -6,8 +6,6 @@
  * Return: EXIT_SUCCESS or EXIT_FAILURE
  */
 
-global_t global;
-
 int main(int argc, char **argv)
 {
 	unsigned int line_number = 1;
