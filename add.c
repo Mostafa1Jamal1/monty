@@ -14,11 +14,9 @@ void add(stack_t **stack, unsigned int line_number)
 		if (next)
 		{
 			next->n += top->n;
-			next = top->next;
 			free(*stack);
 			*stack = next;
-			if (next)
-				next->prev = NULL;
+			next->prev = NULL;
 			return;
 		}
 	}
