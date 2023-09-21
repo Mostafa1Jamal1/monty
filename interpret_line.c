@@ -28,6 +28,12 @@ int interpret_line(FILE *file, stack_t **stack, unsigned int line_number)
 		free(line);
 		return (1);
 	}
+	/* Handle comments with # */
+	if (opcode[0] == '#')
+	{
+		free(line);
+		return (1);
+	}
 	/* Get function and check */
 	func = get_func(opcode);
 	if (!func)
