@@ -31,8 +31,11 @@ int interpret_line(FILE *file, stack_t **stack, unsigned int line_number)
 	func = get_func(opcode);
 	if (!func)
 	{
+		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
+		fclose(global.file);
+		free_stack(*stack);
 		free(line);
-		exit_instrucionfail(line_number, opcode, stack);
+		exit(EXIT_FAILURE);
 	}
 	/* Call the function */
 	func(stack, line_number);

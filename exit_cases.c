@@ -19,20 +19,6 @@ void exit_openfail(char *filename)
 }
 
 /**
- * exit_instrucionfail - exit in invalid instruction
- * @ln: the line number
- * @opcode: the invalid instruction
- * @stack: a pointer to stack
- */
-void exit_instrucionfail(unsigned int ln, char *opcode, stack_t **stack)
-{
-	fclose(global.file);
-	free_stack(*stack);
-	fprintf(stderr, "L%u: unknown instruction %s\n", ln, opcode);
-	exit(EXIT_FAILURE);
-}
-
-/**
  * exit_mallocfail - exit in malloc failure
  * @stack: a pointer to stack
  */
