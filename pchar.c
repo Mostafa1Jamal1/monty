@@ -16,7 +16,7 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		if (top->n >= 0 && top->n <= 255)
+		if (top->n >= 32 && top->n <= 255)
 			printf("%c\n", top->n);
 		else
 		{
