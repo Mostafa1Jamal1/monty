@@ -18,7 +18,6 @@ void push(stack_t **stack, unsigned int line_number)
 			return;
 		}
 	}
-	fclose(global.file);
 	free_stack(*stack);
 	free(global.line);
 	fprintf(stderr, "L%u: usage: push integer\n", line_number);

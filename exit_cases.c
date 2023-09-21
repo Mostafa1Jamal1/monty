@@ -24,7 +24,6 @@ void exit_openfail(char *filename)
  */
 void exit_mallocfail(stack_t **stack)
 {
-	fclose(global.file);
 	free_stack(*stack);
 	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
