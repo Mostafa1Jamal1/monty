@@ -15,10 +15,9 @@ void sub(stack_t **stack, unsigned int line_number)
 		if (next)
 		{
 			next->n -= top->n;
-			next = top->next;
 			free(*stack);
-			if (next)
-				next->prev = NULL;
+			*stack = next;
+			next->prev = NULL;
 			return;
 		}
 	}
